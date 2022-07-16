@@ -13,51 +13,49 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    private String nombre;
-    private String apellido;
-    private String fotoperfil;
+    private String name;
+    private String lastName;
+    private String profilePic;
 
     public User() {
     }
 
-    public User(Long id, String nombre, String apellido, String fotoperfil) {
+    public User(Long id, String name, String lastName, String profilePic) {
         this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.fotoperfil = fotoperfil;
+        this.name = name;
+        this.lastName = lastName;
+        this.profilePic = profilePic;
     }
 
     public Long getId() {
         return id;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getFotoperfil() {
-        return fotoperfil;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setFotoperfil(String fotoperfil) {
-        this.fotoperfil = fotoperfil;
+    public String getLastName() {
+        return lastName;
     }
-    
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getProfilePic() {
+        return profilePic;
+    }
+
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
+    }
 }
