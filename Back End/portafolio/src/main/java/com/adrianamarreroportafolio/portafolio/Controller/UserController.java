@@ -41,9 +41,9 @@ public class UserController {
             @RequestParam("apellido") String nuevoApellido,
             @RequestParam("fotoperfil") String nuevaFotoperfil){
     User usuario = iuserService.findUser(id);
-    usuario.setNombre(nuevoNombre);
-    usuario.setApellido(nuevoApellido);
-    usuario.setFotoperfil(nuevaFotoperfil);
+    usuario.setName(nuevoNombre);
+    usuario.setLastName(nuevoApellido);
+    usuario.setProfilePic(nuevaFotoperfil);
     
     iuserService.saveUser(usuario);
     return usuario;
