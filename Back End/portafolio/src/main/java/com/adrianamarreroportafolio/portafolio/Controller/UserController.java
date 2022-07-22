@@ -4,20 +4,30 @@ package com.adrianamarreroportafolio.portafolio.Controller;
 import com.adrianamarreroportafolio.portafolio.Interface.IUserService;
 import com.adrianamarreroportafolio.portafolio.Model.User;
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/usuario")
 public class UserController {
-    @Autowired IUserService iuserService;
-    
+    private final IUserService iuserService;
+
+    public UserController(IUserService iuserService) {
+        this.iuserService = iuserService;
+    }
+
+    @GetMapping("/id/{id}")
+    public ResponseEntity<User> traerUsuario(@PathVariable("id") Long id){
+        User user = iuserService.findUser(id);
+        return new ResponseEntity<>(user, HttpStatus.OK);
+    }
+
+
     @GetMapping("personas/traer")
     public List<User> getUser(){
         return iuserService.getUser();
