@@ -7,10 +7,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/usuario")
@@ -33,7 +30,7 @@ public class UserController {
         return iuserService.getUser();
     }
     
-    @PostMapping ("personas/crear")
+    @PostMapping("personas/crear")
     public String createUser(@RequestBody User user){
         iuserService.saveUser(user);
         return "El usuario fue creado correctamente";
