@@ -29,7 +29,7 @@ public class UserController {
         return "El usuario fue creado correctamente";
     }
 
-    @DeleteMapping ("personas/borrar/{id}")
+    @DeleteMapping ("/personas/borrar/{id}")
     public String deleteUser(@PathVariable Long id){
         iuserService.deleteUser(id);
         return "El usuario fue eliminado correctamente";
@@ -37,9 +37,9 @@ public class UserController {
     
     @PutMapping("personas/editar/{id}")
     public User editUser(@PathVariable Long id,
-            @RequestParam("nombre") String nuevoNombre,
-            @RequestParam("apellido") String nuevoApellido,
-            @RequestParam("fotoperfil") String nuevaFotoperfil){
+            @RequestParam("name") String nuevoNombre,
+            @RequestParam("lastName") String nuevoApellido,
+            @RequestParam("profilePic") String nuevaFotoperfil){
     User usuario = iuserService.findUser(id);
     usuario.setName(nuevoNombre);
     usuario.setLastName(nuevoApellido);
