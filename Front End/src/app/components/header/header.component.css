@@ -1,0 +1,21 @@
+div{
+    background-color: #181818;
+    color:#F5F5F5
+}
+
+#APLogo{
+    max-height: 50px;
+    float:left;
+}
+
+.socialLogo{
+    float:right;
+    margin-top:5%;
+    max-height: 50px;
+    width: 50px;
+}
+
+.logo{
+    height: 50px;
+    max-width: 50px;
+}
