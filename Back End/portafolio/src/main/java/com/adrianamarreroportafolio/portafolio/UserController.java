@@ -1,5 +1,5 @@
 
-package com.adrianamarreroportafolio.portafolio.Controller;
+package com.adrianamarreroportafolio.portafolio;
 
 import com.adrianamarreroportafolio.portafolio.Interface.IUserService;
 import com.adrianamarreroportafolio.portafolio.Model.User;
